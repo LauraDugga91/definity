@@ -1,0 +1,172 @@
+
+
+header {
+	height: 100vh;
+	background: url(../assets/hero.jpg);
+	background-position: center center;
+	background-size: cover;
+	position: relative;
+	.overlay {
+		height: 100vh;
+		background-color: rgba(0,0,0,0.5);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	nav {
+		display: flex;
+		justify-content: space-between;
+	}
+	.burger {
+		display: none;
+		color: $white;
+		font-size: 40px;
+		background-color: $black;
+		padding: 5px 10px;
+		margin: 10px;
+	}
+	.navlinks {
+		display: flex;
+		list-style-type: none;
+		li {
+			margin-right: 13px;
+		}
+		a {
+			text-decoration: none;
+			color: $grey;
+			font-size: 10px;
+			font-family: 'Open Sans', sans-serif;
+			text-transform: uppercase;
+		}
+		a:hover {
+			color: $white;
+		}
+	}
+	.elements-drop {
+	    display: none;
+	    position: absolute;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	    z-index: 1;
+	    }
+	.elements-drop:hover {
+		display: block;
+	}
+	.elements-drop a {
+	    color: $white;
+	    padding: 10px 16px;
+	    text-decoration: none;
+	    display: inline-block;
+	    background-color: $black;
+	    text-align: center;
+		min-width: 100px;
+	}
+	.droppy {
+	    position: relative;   
+	}
+	.elements-drop a:hover {
+		color: $grey;
+	}
+	.droppy:hover .elements-drop {
+    	display: block;
+	}
+	.inspire {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 120px;
+		text-align: center;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: $white;
+		margin: auto;
+		letter-spacing: 0.1em;	
+	}
+	.middle, .bottom {
+		text-align: center;
+	}
+	.arrows {
+		position: absolute;
+		right: 0px;
+		top: 50%;
+		display: flex;
+		flex-direction: column;
+		transform: translateY(-50%);
+	}
+	.fa-long-arrow-left {
+		background-color: $offwhite;
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		padding-top: 17px;
+		margin-bottom: 2px;
+	}
+	.fa-long-arrow-left:hover {
+		background-color: $grey;
+	}
+	h5 {
+		color: $grey;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	button {
+		@include ButtonStyle($offwhite, $black, 12px)
+	}
+	button:hover {
+		background-color: $grey;
+	}	
+}
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	header {
+		.inspire {
+			font-size: 100px;
+		}
+	}
+	header {
+		ul:nth-child(3) {
+			display: none;
+		}
+	}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	header .inspire {
+		font-size: 80px;
+	}
+	.arrows {
+		visibility: hidden;
+	}
+	header {
+		ul:nth-child(2) {
+			display: none;
+		}
+		.burger {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 100;
+		}
+		.dropdown-content {
+		    display: none;
+		}
+		.dropdown-content a {
+		    color: $white;
+		    padding: 10px;
+		    text-decoration: none;
+		    display: inline-block;
+		}
+		.burger1 {
+			display: flex;
+			flex-direction: column;
+			top: 50px;
+			position: absolute;
+		    right: 0;
+		    background-color: $black;
+		    z-index: 1;
+		    font-size: 15px;
+		}
+	}	
+}
+
